@@ -24,3 +24,14 @@ Section 5: VIrtual VLAN - VLAN
         switchport voice vlan 20
         
 ******** a switch port cant be part of more than one data/voice vlan
+
+
+Section 6: Trunking Concepts
+
+38.
+* switch - switch : cross cabling, known as uplinks (high speed link)
+* A single vlan can span over two or more switches within the lan
+
+39.
+Vlan-Trunk Links: Trunk is a point to point link bw 2 network devices. All vlan traffic will pass through this single link. 
+                  Supports Fa/Gig/10-gig 
