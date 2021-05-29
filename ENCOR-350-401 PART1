@@ -1,0 +1,26 @@
+Section 5: VIrtual VLAN - VLAN
+
+31. Vlan Types:
+        Default Vlan
+        Data Vlan
+        Voice Vlan
+        Management Vlan
+        Native Vlan
+        
+32. Vlan Ranges:
+        0,4095 - Reserved (For system use only, we cant see or use these vlans)
+        1 - Normal (Default, can use but cant delete)
+        2-1001 - Normal (For ethernet vlan. Can use/create/delete these vlans)
+        1002 - 1005 - Normal (Cisco default for FDDI and Token ring. cant delete)
+        1006 - 4094 - Extended (For ethernet vlans only)
+        
+ 33. creating vlan:
+        vlan 10
+        name xyz
+        
+        int fa0/0
+        switchport mode access
+        switchport access vlan 10
+        switchport voice vlan 20
+        
+******** a switch port cant be part of more than one data/voice vlan
