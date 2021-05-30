@@ -68,7 +68,12 @@ Section 7: INTER-VLAN ROUTING
 45. Fwding data bw VLANs
 
 46. Inter-Vlan Routing:
-                Separate gateway interfaces
-                Router dot1q trunks
-                L3 switch SVI
+                Separate gateway interfaces: Need one router with separate gateways for each vlan
+                Router dot1q trunks: 
+                                Using subinterfaces
+                                Router on a stick (ROAS)
+                                Use 1 connection bw router and switch using virtual sub interfaces
+                                ethernet frame belonging to each vlan will be tagged
+                                Need to configure trunk link bw sw port and router port
+                L3 switch SVI (Commomly used)
                 L3 switch routed ports
