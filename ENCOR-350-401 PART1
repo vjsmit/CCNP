@@ -35,3 +35,18 @@ Section 6: Trunking Concepts
 39.
 Vlan-Trunk Links: Trunk is a point to point link bw 2 network devices. All vlan traffic will pass through this single link. 
                   Supports Fa/Gig/10-gig 
+                  
+40. Access link Trunk link:
+                Trunk link carry traffic from multiple vlans.
+                
+41. 802.3 Ethernet Frame Format:
+                Preamble
+                Dest Addr
+                Src Addr
+                Type
+                Data/Payload
+                FCS
+                
+42. Frame tagging:
+               Tagging ethernet frames for vlan identification
+               Tag is added before a frame is send and removed once it is received on trunk link
