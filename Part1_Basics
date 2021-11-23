@@ -1,0 +1,31 @@
+Type of Lan: 
+
+1) Wired LAN
+2) Wireless LAN
+
+
+Transmision Media:
+
+Copper cables: uses electrical signal to send data
+e.g. UTP cables: Most commonly used for connecting devices within LAN, 100m support, straight (same color) or cross cables
+      same device we use cross cable
+      Straight Cable:
+      W/O<-------->O/W
+      O<--->O
+      W/G<------>W/G
+      B<-------->B
+      W/B<---->W/B
+      G<------->G
+      W/Br<------->W/Br
+      Br<--------->Br
+      
+      for cross cable:
+      replace orange with green and vice versa
+      
+Fiber optic cables: uses light signal
+    Mostly for long distance connections
+    bw switch to switch for high transfer rate
+RF signals: 
+
+getmac command
+arp -a 
