@@ -52,8 +52,8 @@ Vlan-Trunk Links: Trunk is a point to point link bw 2 network devices. All vlan 
                Tag is added before a frame is send and removed once it is received on trunk link
                
 43. Trunking Protocols: Responsible for adding and removing tags
-                ISL (Inter sw link): Cisco Proprietary | Add 30 bytes of tag | Supports 1000 vlans
-                dot1q: Open std | works with only ethernet | 4 byte tag added to original frame | supports 4096 vlans
+                ISL (Inter sw link): Cisco Proprietary | Add 30 bytes of tag | Supports 1000 vlans (vlan id is 10 bit. So 2^10 = 1024)
+                dot1q: Open std | works with only ethernet | 4 byte tag added to original frame | supports 4096 vlans (vlan id is 12 bit. So 2^12 = 4096)
                 
 44. Trunk link Config:
                 int fa0/20 
