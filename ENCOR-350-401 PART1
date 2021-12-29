@@ -77,3 +77,15 @@ Section 7: INTER-VLAN ROUTING
                                 Need to configure trunk link bw sw port and router port
                 L3 switch SVI (Commomly used)
                 L3 switch routed ports
+
+68. VTP mode
+71. STP: Bridging loops
+         Root Bridge
+         Root Port/Designated Port/Forwarding port/Blocking port
+         STP BPDU/Convergence/Timers/Interface states
+         Root bridge selection
+         Tuning STP - Cost/Port-priority
+         STP Potfast
+         
+88. Ether-Channel/Port-Channel
+         
