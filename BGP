@@ -1,0 +1,25 @@
+BGP Best Path selection:
+  Best path selection prerequisites:
+  
+  Best path selection order:
+  
+  BGP uses attribute to decide the best path.
+  
+  BGP Path categories: 1)Well-Known Mandatory - Origin, AS_Path, Next_HOP
+                       2)Well-Known discretionary - Locl_Pref, Atomic_Aggregate
+                       3)Optional transitive - Aggregator, Community
+                       4)Optional non-transitive - MED, Originator_ID, Cluster list, Multiprotocol Reachable NLRI, Multiprotocol Unreachable NLRI
+                       
+                       BGP weight attribute
+      Checking Order                 
+         1) Weight
+         2) Local Pref
+         3) Locally Orginated (gets weight of 32768)
+         4) AS-Path
+         5) Origin (I>E>?)  I - network stat, ? - Redistribute
+         6) MED - 
+         7) EBGP over IBGP
+         8) IGP Metric to Next-HOP
+         
+         
+         
