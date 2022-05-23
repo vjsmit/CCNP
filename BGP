@@ -1,4 +1,12 @@
-BGP Best Path selection:
+BGP maintain 3 tables:
+
+  1) Neigh (sh ip bgp summ)
+  2) BGP - contains best route from neigh with attributes (sh ip bgp)
+  3) Routing (sh ip route bgp)  
+  
+  EBGP 
+  
+  BGP Best Path selection:
   Best path selection prerequisites:
   
   Best path selection order:
