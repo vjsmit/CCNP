@@ -1,11 +1,39 @@
 BGP maintain 3 tables:
-
+  Loop prevention mechanism in BGP:
+     route learned by ibgp is not forwaded to next ibgp neigh to prevent loop
+     1) Full Mesh 
+     2) Route Reflector
+     3) Confederation
+  
+  
+Table
   1) Neigh (sh ip bgp summ)
-  2) BGP - contains best route from neigh with attributes (sh ip bgp)
-  3) Routing (sh ip route bgp)  
+  2) BGP - contains best route from neigh with attributes (sh ip bgp) * - valid route, > - Best Path
+  3) Routing (sh ip route bgp) 
   
-  EBGP 
+sh tcp brief
+    server-client relationship
+    Jo connection initiate karta hai is client and the one who reply back is server (179)
+    If connection is initiated at same time then higher router id will become client
+ 
   
+  EBGP - By default, we can create neigh relationship only with directly connected router as TTL value in TCP packet is 1
+         ebgp multihop & TTL Security : We can increase TTL value
+         disable connected check : command we use when we are sure that next router hi hai. Here, also TTL value is 1
+         
+         router bgp 200
+         neigh 4.4.4.4 update-source lo 5  (To update the exit interface)
+         
+         ebgp multihop: 
+                router bgp 100
+                neigh 5.5.5.5 ebgp-multihop 3
+         ttl security (it controls incoming traffic as well)
+                router bgp 100
+                neigh 5.5.5.5 ttl-security hops 3
+                
+                
+         
+         
   BGP Best Path selection:
   Best path selection prerequisites:
   
