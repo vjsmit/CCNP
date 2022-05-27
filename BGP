@@ -1,4 +1,4 @@
-BGP maintain 3 tables:
+
   Loop prevention mechanism in BGP:
      route learned by ibgp is not forwaded to next ibgp neigh to prevent loop
      1) Full Mesh 
@@ -6,7 +6,7 @@ BGP maintain 3 tables:
      3) Confederation
   
   
-Table
+BGP maintain 3 tables:
   1) Neigh (sh ip bgp summ)
   2) BGP - contains best route from neigh with attributes (sh ip bgp) * - valid route, > - Best Path
   3) Routing (sh ip route bgp) 
@@ -36,6 +36,12 @@ sh tcp brief
          
   BGP Best Path selection:
   Best path selection prerequisites:
+      1) next hop value must be in the routing table
+      2) synch rule must be disabled or met: Legacy method (bgp route must be learnt via ibgp also). By default, this rule is off now a days.
+      3) AS path must not contain Local-AS:
+            Normal EBGP loop prevention
+            Can be disabled with allow-as in
+      4) First ASN in path must be neighbor's ASN: bgp enforce-first-as command
   
   Best path selection order:
   
@@ -48,14 +54,18 @@ sh tcp brief
                        
                        BGP weight attribute
       Checking Order                 
-         1) Weight
-         2) Local Pref
+         1) Weight (Cisco propritery, Higher is better, Locally significant)
+         2) Local Pref (Higher, Not advertised to ebgp peers, carried through confederation ebgp)
          3) Locally Orginated (gets weight of 32768)
-         4) AS-Path
+         4) AS-Path (smaller is better)
          5) Origin (I>E>?)  I - network stat, ? - Redistribute
-         6) MED - 
+         6) MED - (Smaller, ompared bw same provider by default)
          7) EBGP over IBGP
-         8) IGP Metric to Next-HOP
+         8) IGP Metric to Next-HOP: bgp best path as-path multipath-relax
+         
+     Tie Breakers:
+          Oldest>Lowest RID>Shortest cluster list>Lowest Neigh Add
+        
          
          
-         
+-
