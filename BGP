@@ -57,11 +57,11 @@ sh tcp brief
          1) Weight (Cisco propritery, Higher is better, Locally significant)
          2) Local Pref (Higher, Not advertised to ebgp peers, carried through confederation ebgp)
          3) Locally Orginated (gets weight of 32768)
-         4) AS-Path (smaller is better)
+         4) AS-Path (smaller is better) : bgp bestpath as-path ignore (if we want to skip)
          5) Origin (I>E>?)  I - network stat, ? - Redistribute
          6) MED - (Smaller, ompared bw same provider by default)
          7) EBGP over IBGP
-         8) IGP Metric to Next-HOP: bgp best path as-path multipath-relax
+         8) IGP Metric to Next-HOP : bgp best path as-path multipath-relax (if we want to skip AS-path checking and do multipathing)
          
      Tie Breakers:
           Oldest>Lowest RID>Shortest cluster list>Lowest Neigh Add
